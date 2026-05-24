@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meine Seite</title>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Login Page</h1>
+        <input type="text" id="eingabe" placeholder="Paswort eingeben">
+        <button onclick="klick()">Login</button>
+        <p class="ausgabe" id="ausgabe"></p>
+    </div>
+
+    <script>
+        async function klick() {
+            const password = document.getElementById('eingabe').value;
+            const ausgabe = document.getElementById('ausgabe');
+            if(password === ""){
+                ausgabe.textContent = "Bitte geben Sie ein Passwort ein!";
+                return;
+            }
+             const aktuellerPfad = window.location.href;
+             const targeturl = aktuellerPfad.replace("login.html", password + ".html");
+            console.log("Aktueller Pfad: " + aktuellerPfad); 
+            console.log("Ziel-URL: " + targeturl);
+      
+             try {
+                const response = await fetch(targeturl, { method: 'HEAD', cache: 'no-cache' });
+                console.log("Fetch-Response: ", response);
+                if (response.status === 200) {
+                    window.location.href = targeturl;
+                } else {
+                    ausgabe.textContent = "Falsches Passwort!";
+                }
+            } catch (error) {
+                ausgabe.textContent = "Fehler: " + error.message;
+            } 
+           
+        }
+    </script>
+</body>
+</html>
