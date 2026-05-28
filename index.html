@@ -129,7 +129,6 @@
 </div>
 
 <script>
-    // Enter-Taste funktioniert auch
     document.getElementById('eingabe').addEventListener('keydown', function (ereignis) {
         if (ereignis.key === 'Enter') {
             klick();
@@ -137,7 +136,7 @@
     });
 
     function klick() {
-        const password = document.getElementById('eingabe').value;
+        const password = document.getElementById('eingabe').value.trim();
         const ausgabe = document.getElementById('ausgabe');
 
         if (password === '') {
@@ -145,9 +144,7 @@
             return;
         }
 
-        const aktuellerPfad = window.location.href;
-        const targeturl = aktuellerPfad.replace('index.html', password + '.html');
-        window.location.href = targeturl;
+        window.location.href = password + '.html';
     }
 </script>
 </body>
