@@ -122,7 +122,7 @@
         }
     });
 
-    async function klick() {
+    function klick() {
         const password = document.getElementById('eingabe').value;
         const ausgabe = document.getElementById('ausgabe');
 
@@ -133,17 +133,7 @@
 
         const aktuellerPfad = window.location.href;
         const targeturl = aktuellerPfad.replace('login.html', password + '.html');
-
-        try {
-            const response = await fetch(targeturl, { method: 'HEAD', cache: 'no-cache' });
-            if (response.status === 200) {
-                window.location.href = targeturl;
-            } else {
-                ausgabe.textContent = 'Falsches Passwort!';
-            }
-        } catch (error) {
-            ausgabe.textContent = 'Fehler: ' + error.message;
-        }
+        window.location.href = targeturl;
     }
 </script>
 </body>
