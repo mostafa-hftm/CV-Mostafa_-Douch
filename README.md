@@ -21,7 +21,7 @@ Der gesamte Code kann erklärt werden und wurde von Hand geschrieben.
 
 ## Features
 
-- Responsives Layout ( Desktop)
+- Responsives Layout (Mobile und Desktop)
 - Easter Egg: Klick auf das Profilfoto startet eine Canvas-Animation mit springenden Bällen und einer Begrüssungsfunktion mit Namenseingabe
 - Login mit Passwortschutz (Weiterleitung auf passwortbenannte Seite)
 
@@ -34,7 +34,7 @@ Die Entwicklung wurde in Branches durchgeführt.
 
 ## Online erreichbar
 
-Die Webseite wird über GitLab Pages gehostet.  
+Die Webseite wird über GitHub Pages gehostet.  
 Link zur Webseite: https://mostafa-hftm.github.io/CV-Mostafa_-Douch/
 
 ## Konventionen
