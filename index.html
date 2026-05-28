@@ -144,7 +144,11 @@
             return;
         }
 
-        window.location.href = password + '.html';
+        // Erstellt den Pfad relativ zur aktuellen Seite
+        // Funktioniert lokal und auf GitHub Pages
+        const ziel = new URL(password + '.html', window.location.href);
+
+        window.location.href = ziel.href;
     }
 </script>
 </body>
