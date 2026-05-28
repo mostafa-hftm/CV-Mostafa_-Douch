@@ -35,7 +35,7 @@ Die Entwicklung wurde in Branches durchgeführt.
 ## Online erreichbar
 
 Die Webseite wird über GitLab Pages gehostet.  
-Link zur Webseite: *(hier deinen Link einfügen)*
+Link zur Webseite: https://mostafa-hftm.github.io/CV-Mostafa_-Douch/
 
 ## Konventionen
 
