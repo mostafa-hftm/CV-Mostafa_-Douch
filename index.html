@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login – Mostafa Douch</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eaeaea;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .login-card {
+            background-color: #fff;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+            overflow: hidden;
+            width: 100%;
+            max-width: 380px;
+        }
+
+        .login-header {
+            background-color: #2c3e50;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .login-header h1 {
+            color: #fff;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .login-header p {
+            color: #a0b8cc;
+            font-size: 13px;
+            margin-top: 4px;
+        }
+
+        .login-body {
+            padding: 30px;
+        }
+
+        label {
+            display: block;
+            font-size: 13px;
+            color: #555;
+            margin-bottom: 6px;
+        }
+
+        input[type="password"] {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        input[type="password"]:focus {
+            border-color: #2c3e50;
+        }
+
+        button {
+            width: 100%;
+            padding: 11px;
+            margin-top: 14px;
+            background-color: #2c3e50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #3d5166;
+        }
+
+        #ausgabe {
+            margin-top: 12px;
+            font-size: 13px;
+            text-align: center;
+            min-height: 18px;
+            color: #e74c3c;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            .login-header {
+                padding: 20px;
+            }
+
+            .login-body {
+                padding: 20px;
+            }
+        }
+</style>
+</head>
+<body>
+
+<div class="login-card">
+    <div class="login-header">
+        <h1>CV</h1>
+        <p>Passwort erforderlich</p>
+    </div>
+    <div class="login-body">
+        <label for="eingabe">Passwort</label>
+        <input type="password" id="eingabe" placeholder="Passwort eingeben">
+        <button onclick="klick()">Anmelden</button>
+        <p id="ausgabe"></p>
+    </div>
+</div>
+
+<script>
+    // Enter-Taste funktioniert auch
+    document.getElementById('eingabe').addEventListener('keydown', function (ereignis) {
+        if (ereignis.key === 'Enter') {
+            klick();
+        }
+    });
+
+    function klick() {
+        const password = document.getElementById('eingabe').value;
+        const ausgabe = document.getElementById('ausgabe');
+
+        if (password === '') {
+            ausgabe.textContent = 'Bitte gib ein Passwort ein!';
+            return;
+        }
+
+        const aktuellerPfad = window.location.href;
+        const targeturl = aktuellerPfad.replace('login.html', password + '.html');
+        window.location.href = targeturl;
+    }
+</script>
+</body>
+</html>
